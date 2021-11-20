@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adipurnomo-me-deployment
+  name: web-me-deployment
   labels:
-    app: myweb
+    app: web-me
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myweb
+      app: web-me
   template:
     metadata:
       labels:
-        app: myweb
+        app: web-me
     spec:
       containers:
-      - name: adipurnomo-web
+      - name: web-me
         image: docker.io/adipurnomo/adipurnomo-web:v1
         ports:
         - containerPort: 80
@@ -23,10 +23,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myweb
+  name: web-me
 spec:
   ports:
   - port: 80
     targetPort: 80
   selector:
-    name: myweb
+    app: web-me
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: adipurnomo
