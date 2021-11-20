@@ -629,7 +629,7 @@ footer .footer__content .footer__links .footer__social__links img svg {
 }
 
 .clients .clients__container .client img {
-  height: 5vh;
+  height: 12vh;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   cursor: pointer;
