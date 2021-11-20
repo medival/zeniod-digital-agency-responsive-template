@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adipurnomo-me-deployment
+  labels:
+    app: myweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  template:
+    metadata:
+      labels:
+        app: myweb
+    spec:
+      containers:
+      - name: adipurnomo-web
+        image: docker.io/adipurnomo/adipurnomo-web:v1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myweb
+spec:
+  type: "LoadBalancer"
+  ports:
+  - name: "http"
+    port: 80
+    targetPort: 80
+  selector:
+    name: myweb
