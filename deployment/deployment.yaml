@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web-me
-        image: docker.io/adipurnomo/adipurnomo-web:v1
+        image: docker.io/adipurnomo/adipurnomo-web:v3
         ports:
         - containerPort: 80
 ---
