@@ -1,34 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adipurnomo-me-deployment
+  name: web-me-deployment
   labels:
-    app: myweb
+    app: web-me
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myweb
+      app: web-me
   template:
     metadata:
       labels:
-        app: myweb
+        app: web-me
     spec:
       containers:
-      - name: adipurnomo-web
-        image: docker.io/adipurnomo/adipurnomo-web:v1
+      - name: web-me
+        image: docker.io/adipurnomo/adipurnomo-web:v3
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: myweb
+  name: web-me
 spec:
-  type: "LoadBalancer"
   ports:
-  - name: "http"
-    port: 80
+  - port: 80
     targetPort: 80
   selector:
     name: myweb
@@ -37,3 +35,18 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: adipurnomo
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: web-me-ingress
+  annotations:
+    kubernetes.io/ingress.class: gce
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: web-me
+          servicePort: 80
