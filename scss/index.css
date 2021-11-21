@@ -602,13 +602,13 @@ footer .footer__content .footer__links .footer__social__links img svg {
   color: white;
 }
 
-.clients {
+.techstack {
   display: -ms-grid;
   display: grid;
   gap: 8vw;
 }
 
-.clients .clients__container {
+.techstack .techstack__container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[5];
@@ -616,7 +616,7 @@ footer .footer__content .footer__links .footer__social__links img svg {
   gap: 5vw;
 }
 
-.clients .clients__container .client {
+.techstack .techstack__container .tech {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -628,14 +628,14 @@ footer .footer__content .footer__links .footer__social__links img svg {
           align-items: center;
 }
 
-.clients .clients__container .client img {
+.techstack .techstack__container .tech img {
   height: 12vh;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.clients .clients__container .client img:hover {
+.techstack .techstack__container .tech img:hover {
   -webkit-transform: scale(1.6);
           transform: scale(1.6);
   overflow: hidden;
@@ -800,7 +800,7 @@ footer .footer__content .footer__links .footer__social__links img svg {
   .milestones .milestones__container .milestone .milestone__icon img {
     height: 5vh;
   }
-  .clients .clients__container {
+  .techstack .techstack__container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     gap: 4rem;

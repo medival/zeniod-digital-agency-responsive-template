@@ -494,14 +494,14 @@ footer {
   }
 }
 
-.clients {
+.techstack {
   display: grid;
   gap: 8vw;
-  .clients__container {
+  .techstack__container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 5vw;
-    .client {
+    .tech {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -672,8 +672,8 @@ footer {
       }
     }
   }
-  .clients {
-    .clients__container {
+  .techstack {
+    .techstack__container {
       grid-template-columns: 1fr;
       gap: 4rem;
     }
