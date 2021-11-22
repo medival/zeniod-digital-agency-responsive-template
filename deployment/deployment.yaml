@@ -29,7 +29,7 @@ spec:
   - port: 80
     targetPort: 80
   selector:
-    name: myweb
+    name: web-me
 ---
 apiVersion: v1
 kind: Namespace
